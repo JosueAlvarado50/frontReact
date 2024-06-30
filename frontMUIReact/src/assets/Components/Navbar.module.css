@@ -1,0 +1,47 @@
+.navLink {
+  text-decoration: none;
+  font-family: monospace;
+  font-size: 18px;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: block;
+  margin-right: 1%;
+}
+
+.navLink:hover {
+  background-color: #5a7d6d;
+  color: #f1f1f1;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: monospace;
+}
+
+.navLinkActive {
+  background-color: #5a7d6d;
+  color: #f1f1f1;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: monospace;
+  margin-right: 1%;
+}
+.buttonLogin {
+  margin: 8px 16px 8px 0;
+  color: white;
+  display: block;
+  border: 1px solid white;
+  border-radius: 25px;
+  text-transform: none;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
