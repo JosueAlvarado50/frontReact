@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import { styled } from "@mui/material/styles";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -16,14 +15,20 @@ import { Box, Button } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { isAdminUser } from "../services/AuthService";
+import { useEffect, useState } from "react";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.common.black,
     color: theme.palette.common.white,
+    padding: "6px 20px",
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
+    padding: "6px 20px",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: 10, // Tamaño de letra para pantallas xs
+    },
   },
 }));
 
@@ -70,19 +75,28 @@ function ListDepartment() {
   return (
     <TableContainer
       sx={{
+        width: { xs: "95%" },
         borderRadius: "10px",
-        ml: { xs: 3, sm: 3, md: 3, lg: 3, xl: 0 },
+        ml: { xs: 0, sm: 3, md: 3, lg: 3, xl: 0 },
         mt: { xs: 2, sm: 2, md: 2, lg: 2, xl: 2 },
       }}
       component={Paper}
     >
-      <Table sx={{ minWidth: 450 }} aria-label="customized table">
+      <Table sx={{ minWidth: 400 }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>ID</StyledTableCell>
-            <StyledTableCell align="center">Department Name</StyledTableCell>
-            <StyledTableCell align="center">Description</StyledTableCell>
-            <StyledTableCell align="center">Options</StyledTableCell>
+            <StyledTableCell sx={{ fontSize: { xs: "11px" } }}>
+              ID
+            </StyledTableCell>
+            <StyledTableCell sx={{ fontSize: { xs: "11px" } }} align="center">
+              Department Name
+            </StyledTableCell>
+            <StyledTableCell sx={{ fontSize: { xs: "11px" } }} align="center">
+              Description
+            </StyledTableCell>
+            <StyledTableCell sx={{ fontSize: { xs: "11px" } }} align="center">
+              Options
+            </StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -100,21 +114,31 @@ function ListDepartment() {
               {isAdmin && (
                 <StyledTableCell align="center">
                   <Box
-                    sx={{ display: "flex", justifyContent: "center", gap: 2 }}
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      gap: 1,
+                      flexDirection: {
+                        xs: "column", // Layout de columna para pantallas pequeñas
+                        sm: "row", // Layout de fila para pantallas más grandes
+                      },
+                    }}
                   >
                     <Button
+                      sx={{ fontSize: { xs: "8px" } }}
                       variant="contained"
                       color="primary"
-                      startIcon={<EditIcon />}
+                      startIcon={<EditIcon sx={{ width: { xs: "15px" } }} />}
                       onClick={() => handleEdit(dep.id)}
                     >
                       Editar
                     </Button>
 
                     <Button
+                      sx={{ fontSize: { xs: "8px" } }}
                       variant="contained"
                       color="secondary"
-                      startIcon={<DeleteIcon />}
+                      startIcon={<DeleteIcon sx={{ width: { xs: "15px" } }} />}
                       onClick={() => handleDelete(dep.id)}
                     >
                       Eliminar

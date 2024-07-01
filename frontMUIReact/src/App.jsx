@@ -16,7 +16,7 @@ import PrivateRoute from "./assets/Components/PrivateRoute";
 import HomePage from "./assets/Components/FoodOrderApp/components/UI/HomePage";
 
 function App() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const isAuth = isUserLoggedIn();
 
   const toggleDrawer = () => {
@@ -35,7 +35,10 @@ function App() {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          p: 2,
+          p: {
+            xs: 1, // Padding for small screens (like iPhone)
+            sm: 2, // Padding for larger screens
+          },
         }}
       >
         {isAuth && (

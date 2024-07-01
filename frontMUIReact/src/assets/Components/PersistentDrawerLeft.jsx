@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Typography,
   Box,
@@ -23,7 +22,7 @@ import BusinessIcon from "@mui/icons-material/Business";
 import EngineeringIcon from "@mui/icons-material/Engineering";
 import { Link, useLocation } from "react-router-dom";
 import { styled } from "@mui/system";
-
+import FastfoodIcon from "@mui/icons-material/Fastfood";
 const drawerWidth = 240;
 const minimizedWidth = 52;
 
@@ -135,7 +134,7 @@ export default function PersistentDrawerLeft({ open, toggleDrawer }) {
                 }}
               >
                 <ListItemIcon>
-                  <BusinessIcon />
+                  <FastfoodIcon />
                 </ListItemIcon>
                 {open && <ListItemText primary="Meals" />}
               </Link>

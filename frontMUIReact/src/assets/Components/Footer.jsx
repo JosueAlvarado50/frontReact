@@ -1,5 +1,5 @@
 // src/Footer.js
-import React from "react";
+
 import { Box, Typography, Link, Grid, IconButton } from "@mui/material";
 import { Facebook, WhatsApp, Instagram } from "@mui/icons-material";
 
@@ -7,7 +7,13 @@ const Footer = () => {
   return (
     <Box
       component="footer"
-      sx={{ backgroundColor: "#333", color: "#fff", py: 2 }}
+      sx={{
+        ml: { sm: 2, xs: 4 },
+        backgroundColor: "#333",
+        color: "#fff",
+        py: 2,
+        width: { xs: "95%" },
+      }}
     >
       <Grid container spacing={2} justifyContent="center">
         <Grid item xs={12} md={4} sx={{ pl: 2, textAlign: "center" }}>

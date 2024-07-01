@@ -1,4 +1,3 @@
-import React from "react";
 import ListDepartment from "./ListDepartment";
 import { Link } from "react-router-dom";
 import { Box, Button } from "@mui/material";
@@ -9,6 +8,8 @@ function Department() {
   return (
     <Box
       sx={{
+        ml: { xs: 4 },
+        width: { xs: "100%" },
         display: "flex",
         flexDirection: "column",
         height: "100vh", // Hace que el contenedor ocupe toda la altura de la ventana
@@ -26,6 +27,8 @@ function Department() {
             component={Link}
             to="/add-department"
             sx={{
+              mr: { xs: 3 },
+              fontSize: { xs: "10px" },
               textAlign: "center",
               width: {
                 xs: "auto",
