@@ -17,7 +17,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import { isUserLoggedIn, logout } from "./services/AuthService";
 
-const pages = ["Home"];
+const pages = ["Home", "Departments"];
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
