@@ -9,14 +9,10 @@ const headers = {
   "Content-Type": "application/json", // Asegúrate de establecer el tipo de contenido adecuado si es necesario
 };
 export function registerAPICall(registerObj) {
-  return axios.post(AUTH_REST_API_BASE_URL + "/register", registerObj, {
-    headers: headers,
-  });
+  return axios.post(AUTH_REST_API_BASE_URL + "/register", registerObj);
 }
 export function loginAPICall(registerObj) {
-  return axios.post(AUTH_REST_API_BASE_URL + "/login", registerObj, {
-    headers: headers,
-  });
+  return axios.post(AUTH_REST_API_BASE_URL + "/login", registerObj);
 }
 export const storedToken = (token) => {
   return localStorage.setItem("token", token);
